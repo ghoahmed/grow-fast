@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const {
-  register,
-  login,
-  createAdmin,
-} = require("../controllers/authController");
-const { protect, adminOnly } = require("../middlewares/authMiddleware");
+const { register, login, me } = require("../controllers/authController");
+const { protect } = require("../middleware/authMiddleware");
 
-router.post("/register", register); // public
-router.post("/login", login); // public
-router.post("/create-admin", protect, adminOnly, createAdmin); // 🔒 admin only
+// POST /api/auth/register
+router.post("/register", register);
+
+// POST /api/auth/login
+router.post("/login", login);
+
+// GET  /api/auth/me  (protected)
+router.get("/me", protect, me);
 
 module.exports = router;

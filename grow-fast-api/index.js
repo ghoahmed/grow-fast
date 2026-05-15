@@ -6,7 +6,7 @@ const cors = require("cors");
 
 app.use(cors({ origin: "http://localhost:5173" }));
 
-//const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 app.use(express.json());
 
@@ -23,7 +23,7 @@ const checkDbConnection = async () => {
 
 // checkDbConnection();
 
-// app.use("/api", authRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 
