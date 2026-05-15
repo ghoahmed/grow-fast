@@ -49,8 +49,7 @@ export function AuthProvider({ children }) {
   const navigateToDashboard = useCallback(
     (role) => {
       if (role === "admin") navigate("/dashboard/admin");
-      else if (role === "client") navigate("/dashboard/client");
-      else navigate("/dashboard/owner");
+      else navigate("/dashboard/client");
     },
     [navigate],
   );

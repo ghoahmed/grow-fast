@@ -5,8 +5,8 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 
-import ClientDashboard from "./pages/ClientDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import ClientDashboard from "./pages/ClientDashboard";
 
 export default function App() {
   return (
@@ -22,7 +22,7 @@ export default function App() {
         <Route
           path="/dashboard/client"
           element={
-            <PrivateRoute role="client">
+            <PrivateRoute role="user">
               <ClientDashboard />
             </PrivateRoute>
           }

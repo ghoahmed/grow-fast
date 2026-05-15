@@ -23,7 +23,7 @@ const checkDbConnection = async () => {
 
 // checkDbConnection();
 
-app.use("/api/auth", authRoutes);
+app.use("/api", authRoutes);
 
 const PORT = process.env.PORT || 3000;
 

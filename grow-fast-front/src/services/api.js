@@ -51,10 +51,10 @@ export const auth = {
       method: "POST",
       body: JSON.stringify({ email, password }),
     }),
-  register: (name, email, password) =>
+  register: (name, email, password, role) =>
     request("/register", {
       method: "POST",
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, role }),
     }),
 };
 export default { auth };

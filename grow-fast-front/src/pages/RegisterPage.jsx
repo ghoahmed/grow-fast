@@ -61,8 +61,7 @@ export default function RegisterPage() {
       });
 
       // ✅ Redirect based on role
-      if (user.role === "owner") navigate("/dashboard/owner");
-      else if (user.role === "client") navigate("/dashboard/client");
+      if (user.role === "user") navigate("/dashboard/client");
       else navigate("/");
     } catch (err) {
       setApiError(err.message || "Registration failed. Please try again.");
