@@ -1,18 +1,22 @@
 import {
-  AlertCircle,
   BarChart3,
-  Calendar,
+  Building2,
   CalendarDays,
-  CheckCircle,
-  DollarSign,
+  Cpu,
+  Film,
+  Globe,
+  ImageIcon,
+  Layers,
   LayoutDashboard,
   MessageSquare,
   Scissors,
-  Shield,
   ShieldCheck,
+  Sliders,
+  Sparkles,
   Star,
   TrendingUp,
   Users,
+  Wand2,
   Zap,
 } from "lucide-react";
 
@@ -47,505 +51,246 @@ export const NAV_ADMIN = [
   { icon: ShieldCheck, label: "Moderation", id: "moderation" },
 ];
 
-export const USERS = [
+export const items = [
   {
-    name: "Sarah Mitchell",
-    email: "sarah@luxestudio.com",
-    role: "Owner",
-    salons: 2,
-    joined: "Jan 12, 2025",
-    status: "active",
-    revenue: "$12,450",
+    type: "image",
+    span: "col-span-2 row-span-2",
+    gradient: "from-purple-700/60 via-indigo-600/40 to-transparent",
+    prompt: "Cyberpunk samurai in neon-lit Tokyo rain, ultra cinematic",
+    style: "Cinematic",
   },
   {
-    name: "Aisha Patel",
-    email: "aisha@glowspa.com",
-    role: "Owner",
-    salons: 1,
-    joined: "Feb 3, 2025",
-    status: "active",
-    revenue: "$8,200",
+    type: "video",
+    span: "col-span-1 row-span-1",
+    gradient: "from-pink-700/60 via-rose-600/40 to-transparent",
+    prompt: "Ocean waves crashing at golden hour",
+    style: "Photorealistic",
   },
   {
-    name: "Marcus Thompson",
-    email: "marcus@hairelite.com",
-    role: "Owner",
-    salons: 3,
-    joined: "Dec 8, 2024",
-    status: "suspended",
-    revenue: "$0",
+    type: "image",
+    span: "col-span-1 row-span-1",
+    gradient: "from-amber-700/60 via-orange-600/40 to-transparent",
+    prompt: "Abstract fluid art, warm palette",
+    style: "Abstract",
   },
   {
-    name: "Emma Johnson",
-    email: "emma.j@gmail.com",
-    role: "Client",
-    salons: 0,
-    joined: "Mar 1, 2025",
-    status: "active",
-    revenue: "-",
+    type: "video",
+    span: "col-span-1 row-span-2",
+    gradient: "from-emerald-700/60 via-teal-600/40 to-transparent",
+    prompt: "Aerial flythrough of a lush forest canopy",
+    style: "Nature",
   },
   {
-    name: "Nina Kowalski",
-    email: "nina@nailbar.pl",
-    role: "Owner",
-    salons: 1,
-    joined: "Apr 2, 2025",
-    status: "pending",
-    revenue: "$0",
+    type: "image",
+    span: "col-span-1 row-span-1",
+    gradient: "from-violet-700/60 via-purple-600/40 to-transparent",
+    prompt: "Portrait of a futuristic empress",
+    style: "Fantasy",
   },
   {
-    name: "Carlos Mendez",
-    email: "carlos@barberkings.es",
-    role: "Owner",
-    salons: 1,
-    joined: "Apr 18, 2025",
-    status: "active",
-    revenue: "$3,100",
+    type: "image",
+    span: "col-span-1 row-span-1",
+    gradient: "from-cyan-700/60 via-blue-600/40 to-transparent",
+    prompt: "Deep ocean bioluminescent creatures",
+    style: "Sci-fi",
   },
 ];
 
-export const PLATFORM_STATS = [
-  { month: "Jan", bookings: 1200, revenue: 48000 },
-  { month: "Feb", bookings: 1450, revenue: 58000 },
-  { month: "Mar", bookings: 1300, revenue: 52000 },
-  { month: "Apr", bookings: 1800, revenue: 72000 },
+// Decorative gradient overlays for visual interest
+export const accentColors = [
+  "bg-gradient-to-br from-purple-900/80 via-indigo-900/60 to-slate-900/40",
+  "bg-gradient-to-br from-pink-900/80 via-rose-900/60 to-slate-900/40",
+  "bg-gradient-to-br from-amber-900/80 via-orange-900/60 to-slate-900/40",
+  "bg-gradient-to-br from-emerald-900/80 via-teal-900/60 to-slate-900/40",
+  "bg-gradient-to-br from-violet-900/80 via-purple-900/60 to-slate-900/40",
+  "bg-gradient-to-br from-cyan-900/80 via-blue-900/60 to-slate-900/40",
 ];
 
-export const RECENT_ACTIVITY = [
+export const faqs = [
   {
-    text: "New salon registered: Bloom Beauty Bar",
-    time: "5m ago",
-    type: "new",
-  },
-  {
-    text: "Payout processed: $2,400 to Sarah M.",
-    time: "12m ago",
-    type: "payment",
-  },
-  { text: "Dispute opened: Order #8841", time: "1h ago", type: "alert" },
-  {
-    text: "New client milestone: 12,000 users",
-    time: "2h ago",
-    type: "success",
+    q: "What AI models power LuminaAI?",
+    a: "We use an ensemble of state-of-the-art diffusion models including our proprietary Lumina-XL architecture, fine-tuned on curated datasets for maximum quality and prompt adherence.",
   },
   {
-    text: "Subscription upgrade: Marcus T. → Pro",
-    time: "3h ago",
-    type: "new",
-  },
-];
-
-export const STATUS_MAP = {
-  active: {
-    label: "Active",
-    cls: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
-  },
-  suspended: {
-    label: "Suspended",
-    cls: "bg-red-500/10 text-red-300 border-red-500/20",
-  },
-  pending: {
-    label: "Pending",
-    cls: "bg-amber-500/10 text-amber-300 border-amber-500/20",
-  },
-};
-
-export const ACTIVITY_ICONS = {
-  new: { icon: Users, color: "text-purple-400", bg: "bg-purple-500/10" },
-  payment: {
-    icon: DollarSign,
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-  },
-  alert: { icon: AlertCircle, color: "text-red-400", bg: "bg-red-500/10" },
-  success: { icon: CheckCircle, color: "text-blue-400", bg: "bg-blue-500/10" },
-};
-
-export const SERVICES = [
-  {
-    name: "Balayage & Blow Dry",
-    salon: "Luxe Studio",
-    duration: "2h",
-    price: "$185",
-    rating: 4.9,
-    category: "Hair",
+    q: "Do I own the content I generate?",
+    a: "Yes. On paid plans you get full commercial rights to everything you create. Free plan generations are for personal, non-commercial use only.",
   },
   {
-    name: "Classic Facial",
-    salon: "Glow Spa",
-    duration: "1h",
-    price: "$120",
-    rating: 4.8,
-    category: "Skin",
+    q: "How long are videos I can generate?",
+    a: "Currently up to 60 seconds per generation on Pro, and up to 3 minutes on Enterprise. We're actively working on longer-form video support.",
   },
   {
-    name: "French Manicure",
-    salon: "Nail Bar",
-    duration: "45m",
-    price: "$65",
-    rating: 4.7,
-    category: "Nails",
+    q: "Can I use LuminaAI via API?",
+    a: "Yes — API access is available on the Enterprise plan. We offer REST endpoints with SDKs for Python, Node.js, and Go. Documentation is available in the developer portal.",
   },
   {
-    name: "Lash Extensions",
-    salon: "Eye Candy",
-    duration: "1.5h",
-    price: "$150",
-    rating: 5.0,
-    category: "Lashes",
+    q: "What happens if I hit my generation limit?",
+    a: "You'll be notified when approaching the limit. You can upgrade your plan at any time, or purchase additional generation packs without changing your subscription.",
   },
   {
-    name: "Deep Tissue Massage",
-    salon: "Zen Spa",
-    duration: "1h",
-    price: "$100",
-    rating: 4.9,
-    category: "Wellness",
-  },
-  {
-    name: "Brow Lamination",
-    salon: "Brow Studio",
-    duration: "45m",
-    price: "$75",
-    rating: 4.8,
-    category: "Brows",
+    q: "Is my data used to train AI models?",
+    a: "Never. Your private generations are not used for any training purposes. We take data privacy seriously — see our privacy policy for full details.",
   },
 ];
 
-export const HISTORY = [
+export const features = [
   {
-    service: "Balayage & Blow Dry",
-    salon: "Luxe Studio",
-    date: "Apr 20, 2025",
-    amount: "$185",
-    status: "completed",
-    rating: 5,
-  },
-  {
-    service: "French Manicure",
-    salon: "Nail Bar",
-    date: "Apr 10, 2025",
-    amount: "$65",
-    status: "completed",
-    rating: 5,
-  },
-  {
-    service: "Classic Facial",
-    salon: "Glow Spa",
-    date: "Mar 28, 2025",
-    amount: "$120",
-    status: "completed",
-    rating: 4,
-  },
-];
-
-export const UPCOMING = [
-  {
-    service: "Lash Extensions",
-    salon: "Eye Candy",
-    date: "Apr 30, 2025",
-    time: "2:00 PM",
-    status: "confirmed",
-  },
-];
-
-export const CATS = [
-  "All",
-  "Hair",
-  "Skin",
-  "Nails",
-  "Lashes",
-  "Brows",
-  "Wellness",
-];
-
-export const FEATURES = [
-  {
-    icon: Calendar,
-    title: "Smart Scheduling",
-    desc: "AI-powered booking that fills your calendar and reduces no-shows by 60%.",
+    icon: Wand2,
     color: "purple",
+    badge: "Core",
+    title: "Text-to-Image",
+    description:
+      "Describe anything and watch it materialize. Our models understand artistic style, lighting, composition, and mood from natural language.",
   },
   {
-    icon: Users,
-    title: "Client Management",
-    desc: "Build lasting relationships with detailed client profiles, preferences & history.",
+    icon: Film,
     color: "pink",
-  },
-  {
-    icon: TrendingUp,
-    title: "Revenue Analytics",
-    desc: "Real-time insights on earnings, popular services, and growth opportunities.",
-    color: "amber",
-  },
-  {
-    icon: Scissors,
-    title: "Service Catalog",
-    desc: "Showcase your services beautifully with custom pricing, duration, and photos.",
-    color: "indigo",
-  },
-  {
-    icon: Shield,
-    title: "Secure Payments",
-    desc: "Accept payments effortlessly with automated invoicing and tips management.",
-    color: "emerald",
+    badge: "Core",
+    title: "Text-to-Video",
+    description:
+      "Go beyond still images. Generate fluid, cinematic video clips up to 60 seconds from a single prompt with full motion control.",
   },
   {
     icon: Zap,
-    title: "Instant Notifications",
-    desc: "Keep clients engaged with smart reminders, confirmations, and follow-ups.",
-    color: "rose",
+    color: "amber",
+    badge: "Performance",
+    title: "Lightning Fast",
+    description:
+      "Images in under 4 seconds, videos in under 30. Our distributed GPU infrastructure ensures you're never waiting long.",
+  },
+  {
+    icon: Layers,
+    color: "blue",
+    badge: "Creative",
+    title: "Style Library",
+    description:
+      "Choose from 80+ curated style presets — anime, photorealism, oil painting, watercolor, cyberpunk, and more — or blend your own.",
+  },
+  {
+    icon: Sliders,
+    color: "emerald",
+    badge: "Control",
+    title: "Fine-Tune Everything",
+    description:
+      "Aspect ratio, CFG scale, steps, seed, model checkpoint. Power-user controls that give you precise command over every generation.",
+  },
+  {
+    icon: ShieldCheck,
+    color: "purple",
+    badge: "Safety",
+    title: "Safe by Default",
+    description:
+      "Built-in content moderation with customizable filters. Your generations are private by default and never used for training.",
   },
 ];
 
-export const STEPS = [
-  {
-    n: "01",
-    title: "Create your profile",
-    desc: "Set up your salon, add services, and customize your booking page in minutes.",
+export const colorMap = {
+  purple: {
+    bg: "bg-purple-500/10",
+    text: "text-purple-400",
+    badge: "purple",
+    glow: "group-hover:shadow-purple-900/20",
+    border: "group-hover:border-purple-500/30",
   },
-  {
-    n: "02",
-    title: "Share your link",
-    desc: "Give clients your unique booking URL or embed it on your existing website.",
+  pink: {
+    bg: "bg-pink-500/10",
+    text: "text-pink-400",
+    badge: "pink",
+    glow: "group-hover:shadow-pink-900/20",
+    border: "group-hover:border-pink-500/30",
   },
-  {
-    n: "03",
-    title: "Manage & grow",
-    desc: "Track appointments, payments, and client relationships from one dashboard.",
+  amber: {
+    bg: "bg-amber-500/10",
+    text: "text-amber-400",
+    badge: "amber",
+    glow: "group-hover:shadow-amber-900/20",
+    border: "group-hover:border-amber-500/30",
   },
+  blue: {
+    bg: "bg-blue-500/10",
+    text: "text-blue-400",
+    badge: "blue",
+    glow: "group-hover:shadow-blue-900/20",
+    border: "group-hover:border-blue-500/30",
+  },
+  emerald: {
+    bg: "bg-emerald-500/10",
+    text: "text-emerald-400",
+    badge: "green",
+    glow: "group-hover:shadow-emerald-900/20",
+    border: "group-hover:border-emerald-500/30",
+  },
+};
+
+// Stats bar at the top of the section
+export const stats = [
+  { icon: ImageIcon, value: "50+ Models", label: "generation models" },
+  { icon: Cpu, value: "4s avg", label: "image generation" },
+  { icon: Film, value: "4K", label: "max resolution" },
+  { icon: Globe, value: "99.9%", label: "uptime SLA" },
 ];
 
-export const TESTIMONIALS = [
+export const plans = [
   {
-    name: "Amira Hassan",
-    role: "Hair Studio Owner, Paris",
-    avatar: "AH",
-    text: "GrowFast transformed how I run my salon. Bookings are up 40% and I spend 3 fewer hours on admin every day.",
-    rating: 5,
-  },
-  {
-    name: "Sofia Reyes",
-    role: "Freelance MUA, Madrid",
-    avatar: "SR",
-    text: "The client management features are incredible. My clients love being able to book instantly at midnight!",
-    rating: 5,
-  },
-  {
-    name: "Jessica Park",
-    role: "Nail Artist, Seoul",
-    avatar: "JP",
-    text: "Switched from 3 different apps to just GrowFast. My calendar has never been more organized.",
-    rating: 5,
-  },
-];
-
-export const PLANS = [
-  {
-    name: "Starter",
-    price: "$0",
-    period: "forever",
-    desc: "Perfect for freelancers",
+    name: "Free",
+    icon: Zap,
+    price: { monthly: 0, yearly: 0 },
+    description: "Perfect for exploring AI generation",
+    badge: null,
+    color: "default",
+    cta: "Get started free",
+    ctaVariant: "secondary",
     features: [
-      "Up to 30 bookings/mo",
-      "1 staff member",
-      "Basic analytics",
-      "Client management",
+      "50 image generations / month",
+      "5 video generations / month",
+      "720p max resolution",
+      "10 style presets",
+      "Community gallery access",
+      "Standard queue priority",
     ],
-    cta: "Start free",
-    popular: false,
+    missing: ["4K resolution", "Commercial license", "API access"],
   },
   {
     name: "Pro",
-    price: "$29",
-    period: "per month",
-    desc: "For growing salons",
+    icon: Sparkles,
+    price: { monthly: 29, yearly: 19 },
+    description: "For creators who need more power",
+    badge: "Most Popular",
+    color: "purple",
+    cta: "Start Pro trial",
+    ctaVariant: "primary",
     features: [
-      "Unlimited bookings",
-      "Up to 5 staff",
-      "Advanced analytics",
-      "Priority support",
-      "Custom branding",
-      "SMS reminders",
+      "2,000 image generations / month",
+      "200 video generations / month",
+      "4K max resolution",
+      "80+ style presets",
+      "Private generations",
+      "Priority queue",
+      "Commercial license",
+      "Advanced controls",
     ],
-    cta: "Start 14-day trial",
-    popular: true,
+    missing: ["Dedicated GPU", "Team seats"],
   },
   {
     name: "Enterprise",
-    price: "$89",
-    period: "per month",
-    desc: "Multi-location businesses",
-    features: [
-      "Everything in Pro",
-      "Unlimited staff",
-      "Multi-location",
-      "API access",
-      "Dedicated support",
-      "White-label",
-    ],
+    icon: Building2,
+    price: { monthly: 99, yearly: 79 },
+    description: "For teams and high-volume use cases",
+    badge: "Best Value",
+    color: "pink",
     cta: "Contact sales",
-    popular: false,
+    ctaVariant: "accent",
+    features: [
+      "Unlimited generations",
+      "8K max resolution",
+      "All style presets + custom",
+      "Dedicated GPU cluster",
+      "API access (1M req/mo)",
+      "Team seats (up to 25)",
+      "SSO & admin controls",
+      "SLA + priority support",
+      "White-label options",
+    ],
+    missing: [],
   },
 ];
-
-// Map nav labels to section IDs
-export const NAV_LINKS = [
-  { label: "Features", id: "features" },
-  { label: "Pricing", id: "pricing" },
-  { label: "How it works", id: "how-it-works" },
-  { label: "Testimonials", id: "testimonials" },
-];
-
-export const APPOINTMENTS_TODAY = [
-  {
-    id: 1,
-    client: "Maria Garcia",
-    service: "Balayage + Blow Dry",
-    time: "09:00",
-    duration: "2h",
-    status: "confirmed",
-    amount: "$185",
-  },
-  {
-    id: 2,
-    client: "Aisha Patel",
-    service: "French Manicure",
-    time: "11:00",
-    duration: "45m",
-    status: "confirmed",
-    amount: "$65",
-  },
-  {
-    id: 3,
-    client: "Sophie Chen",
-    service: "Facial Treatment",
-    time: "12:30",
-    duration: "1h",
-    status: "in-progress",
-    amount: "$120",
-  },
-  {
-    id: 4,
-    client: "Julia Roberts",
-    service: "Hair Cut & Style",
-    time: "14:00",
-    duration: "1h",
-    status: "pending",
-    amount: "$90",
-  },
-  {
-    id: 5,
-    client: "Emma Wilson",
-    service: "Lash Extensions",
-    time: "15:30",
-    duration: "1.5h",
-    status: "confirmed",
-    amount: "$150",
-  },
-];
-
-export const CLIENTS = [
-  {
-    name: "Maria Garcia",
-    visits: 14,
-    spent: "$2,340",
-    last: "2 days ago",
-    loyalty: "Gold",
-  },
-  {
-    name: "Aisha Patel",
-    visits: 8,
-    spent: "$980",
-    last: "Today",
-    loyalty: "Silver",
-  },
-  {
-    name: "Sophie Chen",
-    visits: 22,
-    spent: "$4,100",
-    last: "1 week ago",
-    loyalty: "Platinum",
-  },
-  {
-    name: "Julia Roberts",
-    visits: 3,
-    spent: "$360",
-    last: "3 weeks ago",
-    loyalty: "Bronze",
-  },
-  {
-    name: "Emma Wilson",
-    visits: 11,
-    spent: "$1,650",
-    last: "Yesterday",
-    loyalty: "Silver",
-  },
-];
-
-export const WEEK_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-export const WEEK_SLOTS = [
-  {
-    day: 0,
-    time: "09:00",
-    client: "Maria G.",
-    color: "bg-purple-500/20 border-purple-500/30 text-purple-300",
-  },
-  {
-    day: 0,
-    time: "11:00",
-    client: "Aisha P.",
-    color: "bg-pink-500/20 border-pink-500/30 text-pink-300",
-  },
-  {
-    day: 1,
-    time: "10:00",
-    client: "Sophie C.",
-    color: "bg-indigo-500/20 border-indigo-500/30 text-indigo-300",
-  },
-  {
-    day: 1,
-    time: "14:00",
-    client: "Emma W.",
-    color: "bg-amber-500/20 border-amber-500/30 text-amber-300",
-  },
-  {
-    day: 2,
-    time: "09:00",
-    client: "Julia R.",
-    color: "bg-rose-500/20 border-rose-500/30 text-rose-300",
-  },
-  {
-    day: 3,
-    time: "11:00",
-    client: "Chloe M.",
-    color: "bg-teal-500/20 border-teal-500/30 text-teal-300",
-  },
-  {
-    day: 4,
-    time: "15:00",
-    client: "Nina K.",
-    color: "bg-purple-500/20 border-purple-500/30 text-purple-300",
-  },
-  {
-    day: 5,
-    time: "10:00",
-    client: "Maria G.",
-    color: "bg-pink-500/20 border-pink-500/30 text-pink-300",
-  },
-  {
-    day: 5,
-    time: "13:00",
-    client: "Aisha P.",
-    color: "bg-amber-500/20 border-amber-500/30 text-amber-300",
-  },
-];
-
-export const REVENUE_BARS = [65, 45, 80, 55, 90, 70, 85];
-
-export const LOYALTY_COLORS = {
-  Platinum: "bg-blue-500/10 text-blue-300 border-blue-500/20",
-  Gold: "bg-amber-500/10 text-amber-300 border-amber-500/20",
-  Silver: "bg-slate-500/10 text-slate-300 border-slate-400/20",
-  Bronze: "bg-orange-500/10 text-orange-300 border-orange-500/20",
-};
