@@ -1,54 +1,303 @@
 import {
   BarChart3,
   Building2,
-  CalendarDays,
   Cpu,
   Film,
   Globe,
   ImageIcon,
   Layers,
   LayoutDashboard,
-  MessageSquare,
-  Scissors,
   ShieldCheck,
   Sliders,
   Sparkles,
-  Star,
-  TrendingUp,
   Users,
   Wand2,
   Zap,
+  History,
+  CreditCard,
+  Settings,
+  Bell,
+  FileText,
 } from "lucide-react";
 
-export const notifs = [
-  { text: "New booking from Maria G.", time: "2m ago", dot: "bg-purple-400" },
-  { text: "Payment received $85", time: "14m ago", dot: "bg-emerald-400" },
-  { text: "3 appointments tomorrow", time: "1h ago", dot: "bg-amber-400" },
-];
-
-export const NAV_OWNER = [
-  { icon: LayoutDashboard, label: "Dashboard", id: "dashboard" },
-  { icon: CalendarDays, label: "Appointments", id: "appointments", badge: 3 },
-  { icon: Scissors, label: "Services", id: "services" },
-  { icon: Users, label: "Clients", id: "clients" },
-  { icon: TrendingUp, label: "Analytics", id: "analytics" },
-  { icon: Star, label: "Reviews", id: "reviews" },
-  { icon: MessageSquare, label: "Messages", id: "messages", badge: 2 },
-];
+// ── Navigation ────────────────────────────────────────────────────────────
 
 export const NAV_CLIENT = [
-  { icon: LayoutDashboard, label: "Dashboard", id: "dashboard" },
-  { icon: CalendarDays, label: "Book Now", id: "book" },
-  { icon: Star, label: "My Bookings", id: "bookings" },
-  { icon: MessageSquare, label: "Messages", id: "messages" },
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "generate-image", label: "Generate Image", icon: ImageIcon },
+  { id: "generate-video", label: "Generate Video", icon: Film },
+  { id: "my-generations", label: "My Generations", icon: Layers, badge: 3 },
+  { id: "history", label: "History", icon: History },
+  { id: "billing", label: "Billing & Credits", icon: CreditCard },
+  { id: "settings", label: "Settings", icon: Settings },
 ];
 
 export const NAV_ADMIN = [
-  { icon: LayoutDashboard, label: "Overview", id: "dashboard" },
-  { icon: Users, label: "Users", id: "users" },
-  { icon: Scissors, label: "Salons", id: "salons" },
-  { icon: BarChart3, label: "Analytics", id: "analytics" },
-  { icon: ShieldCheck, label: "Moderation", id: "moderation" },
+  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { id: "users", label: "Users", icon: Users },
+  { id: "generations", label: "Generations", icon: Sparkles },
+  { id: "analytics", label: "Analytics", icon: BarChart3 },
+  { id: "moderation", label: "Moderation", icon: ShieldCheck, badge: 5 },
+  { id: "billing", label: "Billing & Plans", icon: CreditCard },
+  { id: "notifications", label: "Notifications", icon: Bell },
+  { id: "system", label: "System", icon: Sliders },
+  { id: "logs", label: "Logs", icon: FileText },
+  { id: "settings", label: "Settings", icon: Settings },
+];
+
+// ── Notifications ─────────────────────────────────────────────────────────
+
+export const notifs = [
+  {
+    text: "Your image generation is complete",
+    time: "2 min ago",
+    dot: "bg-emerald-400",
+  },
+  {
+    text: "You have 50 credits remaining this month",
+    time: "1 hour ago",
+    dot: "bg-amber-400",
+  },
+  {
+    text: "New style presets added: Neon Noir, Crystal",
+    time: "3 hours ago",
+    dot: "bg-purple-400",
+  },
+  {
+    text: "Your Pro plan renews in 5 days",
+    time: "Yesterday",
+    dot: "bg-pink-400",
+  },
+];
+
+// ── Client mock data ──────────────────────────────────────────────────────
+
+export const CLIENT_STATS = [
+  {
+    label: "Credits Left",
+    value: "1,420",
+    change: "-580 used",
+    color: "purple",
+    icon: CreditCard,
+  },
+  {
+    label: "Images Generated",
+    value: "284",
+    change: "+34 this week",
+    color: "pink",
+    icon: ImageIcon,
+  },
+  {
+    label: "Videos Generated",
+    value: "47",
+    change: "+8 this week",
+    color: "amber",
+    icon: Film,
+  },
+  {
+    label: "Queue Position",
+    value: "#1",
+    change: "Instant now",
+    color: "emerald",
+    icon: Sparkles,
+  },
+];
+
+export const RECENT_GENERATIONS = [
+  {
+    prompt: "Cyberpunk samurai in neon-lit Tokyo rain",
+    type: "image",
+    style: "Cinematic",
+    status: "done",
+    time: "2m ago",
+    grad: "from-purple-700/50 to-indigo-700/30",
+  },
+  {
+    prompt: "Aerial ocean drone shot at golden hour",
+    type: "video",
+    style: "Nature",
+    status: "done",
+    time: "15m ago",
+    grad: "from-pink-700/50 to-rose-700/30",
+  },
+  {
+    prompt: "Crystal cave bioluminescent creatures",
+    type: "image",
+    style: "Fantasy",
+    status: "done",
+    time: "1h ago",
+    grad: "from-cyan-700/50 to-teal-700/30",
+  },
+  {
+    prompt: "Abstract fluid art with warm palette",
+    type: "image",
+    style: "Abstract",
+    status: "done",
+    time: "2h ago",
+    grad: "from-amber-700/50 to-orange-700/30",
+  },
+  {
+    prompt: "Futuristic city timelapse from rooftop",
+    type: "video",
+    style: "Sci-fi",
+    status: "processing",
+    time: "Just now",
+    grad: "from-emerald-700/50 to-green-700/30",
+  },
+  {
+    prompt: "Portrait of an empress, baroque lighting",
+    type: "image",
+    style: "Portrait",
+    status: "done",
+    time: "3h ago",
+    grad: "from-violet-700/50 to-purple-700/30",
+  },
+];
+
+export const USAGE_HISTORY = [
+  { date: "May 15", images: 12, videos: 3, credits: 54 },
+  { date: "May 14", images: 8, videos: 1, credits: 28 },
+  { date: "May 13", images: 20, videos: 5, credits: 90 },
+  { date: "May 12", images: 6, videos: 0, credits: 18 },
+  { date: "May 11", images: 15, videos: 2, credits: 61 },
+  { date: "May 10", images: 9, videos: 4, credits: 49 },
+  { date: "May 9", images: 18, videos: 6, credits: 102 },
+];
+
+// ── Admin mock data ───────────────────────────────────────────────────────
+
+export const ADMIN_STATS = [
+  {
+    label: "Total Users",
+    value: "12,847",
+    change: "+342 this week",
+    color: "purple",
+    icon: Users,
+  },
+  {
+    label: "Generations Today",
+    value: "48,291",
+    change: "+12% vs yesterday",
+    color: "pink",
+    icon: Sparkles,
+  },
+  {
+    label: "Monthly Revenue",
+    value: "$84,320",
+    change: "+18% MoM",
+    color: "emerald",
+    icon: CreditCard,
+  },
+  {
+    label: "Flagged Content",
+    value: "23",
+    change: "5 urgent",
+    color: "amber",
+    icon: ShieldCheck,
+  },
+];
+
+export const RECENT_USERS = [
+  {
+    name: "Alex Mercer",
+    email: "alex@example.com",
+    plan: "Pro",
+    joined: "Today",
+    status: "active",
+    gens: 284,
+  },
+  {
+    name: "Layla Hassan",
+    email: "layla@example.com",
+    plan: "Free",
+    joined: "Yesterday",
+    status: "active",
+    gens: 47,
+  },
+  {
+    name: "Kai Nakamura",
+    email: "kai@example.com",
+    plan: "Enterprise",
+    joined: "May 13",
+    status: "active",
+    gens: 1204,
+  },
+  {
+    name: "Sofia Reyes",
+    email: "sofia@example.com",
+    plan: "Pro",
+    joined: "May 12",
+    status: "suspended",
+    gens: 91,
+  },
+  {
+    name: "Marcus Bell",
+    email: "marcus@example.com",
+    plan: "Free",
+    joined: "May 11",
+    status: "active",
+    gens: 18,
+  },
+  {
+    name: "Yuna Park",
+    email: "yuna@example.com",
+    plan: "Pro",
+    joined: "May 10",
+    status: "active",
+    gens: 376,
+  },
+];
+
+export const MODERATION_QUEUE = [
+  {
+    prompt: "Graphic violence scene in ancient war",
+    user: "user_8x2k",
+    type: "image",
+    flag: "Violence",
+    time: "5m ago",
+    urgent: true,
+  },
+  {
+    prompt: "Copyrighted cartoon character recreation",
+    user: "user_3p9q",
+    type: "video",
+    flag: "Copyright",
+    time: "12m ago",
+    urgent: true,
+  },
+  {
+    prompt: "Misleading political deepfake scene",
+    user: "user_1a7b",
+    type: "video",
+    flag: "Deepfake",
+    time: "1h ago",
+    urgent: false,
+  },
+  {
+    prompt: "Explicit content attempt",
+    user: "user_9z4c",
+    type: "image",
+    flag: "NSFW",
+    time: "2h ago",
+    urgent: false,
+  },
+  {
+    prompt: "Extremist symbol in illustration",
+    user: "user_5r8d",
+    type: "image",
+    flag: "Extremism",
+    time: "3h ago",
+    urgent: false,
+  },
+];
+
+export const SYSTEM_HEALTH = [
+  { label: "API Latency", value: "148ms", status: "good" },
+  { label: "GPU Utilization", value: "73%", status: "good" },
+  { label: "Queue Depth", value: "212 jobs", status: "warn" },
+  { label: "Error Rate", value: "0.3%", status: "good" },
+  { label: "Storage", value: "61% used", status: "good" },
+  { label: "CDN Cache Hit", value: "94%", status: "good" },
 ];
 
 export const items = [

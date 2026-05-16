@@ -4,18 +4,25 @@ import Navbar from "./Navbar";
 
 export default function DashboardLayout({
   role,
-  title, // ← navigate prop removed
+  title,
   children,
   defaultActive = "dashboard",
+  // If the parent (dashboard page) manages activeId itself, accept it as a prop
+  activeId: activeIdProp,
+  setActiveId: setActiveIdProp,
 }) {
-  const [activeId, setActiveId] = useState(defaultActive);
+  // Fallback: internal state if no external control is passed
+  const [internalActiveId, setInternalActiveId] = useState(defaultActive);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const activeId = activeIdProp ?? internalActiveId;
+  const setActiveId = setActiveIdProp ?? setInternalActiveId;
 
   return (
     <div className="flex h-screen bg-[#0F172A] overflow-hidden">
       <Sidebar
         role={role}
-        activeId={activeId} // ← no navigate prop
+        activeId={activeId}
         setActiveId={setActiveId}
         mobileOpen={mobileOpen}
         setMobileOpen={setMobileOpen}

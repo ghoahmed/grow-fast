@@ -11,7 +11,7 @@ import {
   Menu,
 } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
-import { NAV_ADMIN, NAV_CLIENT, NAV_OWNER } from "../../constants";
+import { NAV_ADMIN, NAV_CLIENT } from "../../constants";
 
 // Mobile sidebar toggle button — exported so Navbar can render it
 export function MobileMenuButton({ onClick }) {
@@ -36,8 +36,7 @@ export default function Sidebar({
   const { user, logout } = useAuth();
   const [collapsed, setCollapsed] = useState(false);
 
-  const navItems =
-    role === "user" ? NAV_CLIENT : role === "admin" ? NAV_ADMIN : NAV_OWNER;
+  const navItems = role === "user" ? NAV_CLIENT : NAV_ADMIN;
 
   // Derive display name from auth user or fallback
   const userName =
