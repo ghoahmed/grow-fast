@@ -37,7 +37,7 @@ export function FAQSection() {
         <SectionTitle
           label="FAQ"
           title="Got questions?"
-          subtitle="Everything you need to know about LuminaAI."
+          subtitle="Everything you need to know about GrowFast."
         />
         <div className="space-y-3">
           {faqs.map((item) => (

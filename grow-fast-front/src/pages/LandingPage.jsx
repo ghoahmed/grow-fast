@@ -4,7 +4,7 @@ import { FAQSection } from "../components/ui/Faqsection";
 import FeaturesSection from "../components/ui/Featuressection";
 import GallerySection from "../components/ui/Gallerysection";
 import HeroSection from "../components/ui/HeroSection";
-import Navbar from "../components/ui/Navbar";
+import Navbar from "../components/ui/LandingNavbar";
 import PricingSection from "../components/ui/Pricingsection";
 
 const LandingPage = () => {

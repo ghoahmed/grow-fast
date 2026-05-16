@@ -23,7 +23,7 @@ export default function Footer() {
                 className="font-bold text-lg text-[#F8FAFC]"
                 style={{ fontFamily: "'Outfit', sans-serif" }}
               >
-                Lumina<span className="gradient-text">AI</span>
+                Grow<span className="gradient-text">Fast</span>
               </span>
             </Link>
             <p className="text-sm text-slate-500 leading-relaxed max-w-xs mb-6">
@@ -68,7 +68,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-600">
-            © {new Date().getFullYear()} LuminaAI, Inc. All rights reserved.
+            © {new Date().getFullYear()} GrowFast, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

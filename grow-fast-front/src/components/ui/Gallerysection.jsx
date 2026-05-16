@@ -77,7 +77,7 @@ export default function GallerySection() {
         <SectionTitle
           label="Gallery"
           title="See what's possible"
-          subtitle="A glimpse of what creators are generating on LuminaAI every day. All made with simple text prompts."
+          subtitle="A glimpse of what creators are generating on GrowFast every day. All made with simple text prompts."
         />
 
         {/* Masonry-style grid */}

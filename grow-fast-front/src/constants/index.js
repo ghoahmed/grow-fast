@@ -22,6 +22,13 @@ import {
 
 // ── Navigation ────────────────────────────────────────────────────────────
 
+export const NAV_LINKS = [
+  { label: "Features", href: "#features" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+
 export const NAV_CLIENT = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { id: "generate-image", label: "Generate Image", icon: ImageIcon },
@@ -357,8 +364,8 @@ export const accentColors = [
 
 export const faqs = [
   {
-    q: "What AI models power LuminaAI?",
-    a: "We use an ensemble of state-of-the-art diffusion models including our proprietary Lumina-XL architecture, fine-tuned on curated datasets for maximum quality and prompt adherence.",
+    q: "What AI models power GrowFast?",
+    a: "We use an ensemble of state-of-the-art diffusion models including our proprietary GrowFast-XL architecture, fine-tuned on curated datasets for maximum quality and prompt adherence.",
   },
   {
     q: "Do I own the content I generate?",
@@ -369,7 +376,7 @@ export const faqs = [
     a: "Currently up to 60 seconds per generation on Pro, and up to 3 minutes on Enterprise. We're actively working on longer-form video support.",
   },
   {
-    q: "Can I use LuminaAI via API?",
+    q: "Can I use GrowFast via API?",
     a: "Yes — API access is available on the Enterprise plan. We offer REST endpoints with SDKs for Python, Node.js, and Go. Documentation is available in the developer portal.",
   },
   {

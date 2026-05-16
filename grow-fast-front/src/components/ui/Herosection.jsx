@@ -262,7 +262,7 @@ export default function HeroSection() {
               <div className="w-3 h-3 rounded-full bg-amber-500/60" />
               <div className="w-3 h-3 rounded-full bg-emerald-500/60" />
               <div className="flex-1 mx-4 bg-white/5 rounded-lg px-4 py-1.5 text-xs text-slate-500 text-center">
-                app.luminaai.io/generate
+                app.GrowFast.io/generate
               </div>
             </div>
             {/* Mock generation UI */}
